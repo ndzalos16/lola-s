@@ -1,24 +1,255 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Website Deleted</title>
-  <style>
-    body {
-      background-color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    h1 {
-      font-size: 80px;
-      color: red;
-      font-family: Arial, sans-serif;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lolas Baking Bites - Baked For You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fce4ec; /* Light pink background */
+            color: #4a4a4a;
+        }
+        .header-font {
+            font-family: 'Great Vibes', cursive;
+        }
+        .btn-primary {
+            background-color: #e91e63; /* Pink */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #d81b60; /* Darker pink on hover */
+            transform: translateY(-2px);
+        }
+        .card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
+        }
+        .footer-bg {
+            background-color: #e91e63; /* Pink */
+            color: white;
+        }
+        .text-pink-500 {
+            color: #e91e63;
+        }
+        .border-pink-500 {
+            border-color: #e91e63;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-fade-in-down {
+            animation: fadeInDown 1s ease-out forwards;
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        .animate-scale-in {
+            animation: scaleIn 0.8s ease-out forwards;
+            animation-delay: 0.5s; /* Delay for hero button */
+            opacity: 0; /* Start invisible */
+        }
+        .animate-slide-in-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        .animate-delay-100 { animation-delay: 0.1s; }
+        .animate-delay-200 { animation-delay: 0.2s; }
+        .animate-delay-300 { animation-delay: 0.3s; }
+        .animate-delay-400 { animation-delay: 0.4s; }
+    </style>
 </head>
-<body>
-  <h1>Website Deleted</h1>
+<body class="antialiased">
+    <!-- Header Section -->
+    <header class="bg-white shadow-md p-4 md:p-6 flex flex-col md:flex-row justify-between items-center rounded-b-lg animate-fade-in-down">
+        <div class="flex items-center mb-4 md:mb-0 animate-slide-in-left">
+            <img src="216023a3-4207-49ce-977c-b96960ca58b0-removebg-preview.png" alt="Lolas Baking Bites Logo" class="h-20 w-20 rounded-full object-cover mr-4">
+            <h1 class="text-4xl font-bold text-pink-500 header-font">Lolas Baking Bites</h1>
+        </div>
+        <nav class="animate-slide-in-right">
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="text-gray-700 hover:text-pink-500 font-semibold text-lg transition duration-300 ease-in-out">Home</a></li>
+                <li><a href="#products" class="text-gray-700 hover:text-pink-500 font-semibold text-lg transition duration-300 ease-in-out">Products</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-pink-500 font-semibold text-lg transition duration-300 ease-in-out">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-r from-pink-300 to-pink-500 text-white py-20 md:py-32 flex items-center justify-center rounded-lg m-4 shadow-lg animate-fade-in">
+        <div class="container mx-auto text-center px-4">
+            <h2 class="text-5xl md:text-7xl font-bold mb-4 header-font animate-fade-in-down">Baked For You!</h2>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in animate-delay-200">Delicious cakes for every occasion, made with love in Bloemfontein.</p>
+            <a href="#products" class="btn-primary inline-block text-lg font-semibold animate-scale-in">Explore Our Delights</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 md:py-24 bg-white m-4 rounded-lg shadow-lg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-pink-500 header-font animate-fade-in-down">Our Delicious Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="card animate-fade-in animate-delay-100">
+                    <div class="relative aspect-[3/4] rounded-t-lg overflow-hidden">
+                        <img src="c9c28af2-27a6-4fd7-9de9-7b63b90efcf4.png" alt="Product 1" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Classic Vanilla Cake</h3>
+                        <p class="text-gray-600">A timeless favorite, moist vanilla cake with creamy frosting.</p>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="card animate-fade-in animate-delay-200">
+                    <div class="relative aspect-[3/4] rounded-t-lg overflow-hidden">
+                        <img src="21188cff-d623-48c6-b41b-76fa46db8120.png" alt="Product 2" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Decadent Chocolate Cake</h3>
+                        <p class="text-gray-600">Rich, dark chocolate cake, perfect for chocolate lovers.</p>
+                    </div>
+                </div>
+                <!-- Product 3 - Corrected image path -->
+                <div class="card animate-fade-in animate-delay-300">
+                    <div class="relative aspect-[3/4] rounded-t-lg overflow-hidden">
+                        <img src="153e388e-9426-4b46-a15b-ee5941296109.png" alt="Product 3" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Red Velvet Dream</h3>
+                        <p class="text-gray-600">Velvety smooth red velvet with classic cream cheese frosting.</p>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="card animate-fade-in animate-delay-400">
+                    <div class="relative aspect-[3/4] rounded-t-lg overflow-hidden">
+                        <img src="7e911728-7d72-42c9-adf9-5b80e86248ec.png" alt="Product 4" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-2">Custom Celebration Cake</h3>
+                        <p class="text-gray-600">Design your dream cake for any special event.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section (Optional, but good for professionalism) -->
+    <section id="about" class="py-16 md:py-24 bg-pink-100 m-4 rounded-lg shadow-lg animate-fade-in">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 text-pink-500 header-font animate-fade-in-down">About Lolas Baking Bites</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed animate-fade-in animate-delay-200">
+                At Lolas Baking Bites, we believe every moment is worth celebrating with a delicious cake.
+                Handcrafted with the finest ingredients and a sprinkle of love, our cakes are designed
+                to bring joy to your taste buds and make your special occasions even sweeter.
+                Located in the heart of Bloemfontein, we are dedicated to baking happiness, one bite at a time.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white m-4 rounded-lg shadow-lg animate-fade-in">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 text-pink-500 header-font animate-fade-in-down">Get In Touch</h2>
+            <p class="text-lg text-gray-700 mb-6 animate-fade-in animate-delay-200">Ready to order your perfect cake or have a question? Contact us today!</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                <div class="flex items-center text-gray-800 text-xl animate-slide-in-left animate-delay-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684L10.5 9.87a1 1 0 00.54.54l3.28 1.28a1 1 0 00.684.949H19a2 2 0 012 2v1a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <a href="tel:+27736515169" class="hover:text-pink-500 transition duration-300 ease-in-out">073 651 5169</a>
+                </div>
+                <div class="flex items-center text-gray-800 text-xl animate-slide-in-right animate-delay-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684L10.5 9.87a1 1 0 00.54.54l3.28 1.28a1 1 0 00.684.949H19a2 2 0 012 2v1a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <a href="tel:+2765666069" class="hover:text-pink-500 transition duration-300 ease-in-out">065 666 069</a>
+                </div>
+            </div>
+            <p class="text-lg text-gray-700 mt-6 animate-fade-in animate-delay-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Located in Bloemfontein, South Africa
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-bg py-8 mt-8 rounded-t-lg animate-fade-in">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Lolas Baking Bites. All rights reserved.</p>
+            <p class="mt-2">Baked with love in Bloemfontein.</p>
+        </div>
+    </footer>
 </body>
 </html>
